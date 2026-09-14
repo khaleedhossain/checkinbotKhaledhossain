@@ -165,7 +165,11 @@ def is_checkin_post(title):
     return "check-in" in title.lower()
 
 def has_user_reply(post_id):
-    """Check if we already replied to this post to avoid duplicates."""
+    """Check if we already replied to this post to avoid duplicates.
+
+    Prevents posting multiple replies to the same check-in if the workflow
+    is re-run or if the bot is triggered multiple times.
+    """
     try:
         response = requests.get(
             f"{API_URL}/api/v1/datasets/posts/{post_id}/comments",
@@ -178,19 +182,26 @@ def has_user_reply(post_id):
         # The API will identify comments by the authenticated user
         for comment in comments:
             # Check if comment author matches our authenticated user
-            if comment.get("is_own"):  # Assuming API marks our own comments
+            if comment.get("is_own"):  # API marks our own comments with is_own
                 return True
 
         return False
     except requests.exceptions.RequestException as e:
         print(f"  ⚠️  Error checking existing comments: {e}")
+        # On error checking comments, assume no reply to be safe
         return False
 
 def reply_to_checkin(post_id, title):
-    """Reply to a check-in post."""
-    reply_text = f"Check-in received and logged. Ready for Week {title.split()[-1] if title else '?'} updates."
+    """Reply to a check-in post.
 
-    # Check if already replied to avoid duplicates
+    Attempts to post a reply to the check-in. Handles several cases:
+    - 201: Successfully posted (returns True)
+    - 423: Window closed (expected for old check-ins, returns False)
+    - Other: API error (returns False)
+    """
+    reply_text = f"Check-in received and logged. Ready for updates."
+
+    # Check if already replied to avoid duplicates on re-runs
     if has_user_reply(post_id):
         print(f"  ℹ️  Already replied to post {post_id}")
         return True
@@ -204,12 +215,14 @@ def reply_to_checkin(post_id, title):
 
         if response.status_code == 423:
             # Window closed - this is expected for old check-ins
+            # Server enforces reply windows; 423 means window already closed
             print(f"  ⏰ Check-in window closed for post {post_id} (423 Locked)")
             return False
         elif response.status_code == 201:
             print(f"  ✅ Replied to check-in post {post_id}")
             return True
         else:
+            # Unexpected status code
             print(f"  ❌ Error replying to post {post_id}: {response.status_code}")
             print(f"     Response: {response.text}")
             return False
