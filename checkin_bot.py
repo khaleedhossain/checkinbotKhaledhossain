@@ -49,9 +49,9 @@ def fetch_posts(user_id, page=1):
         return {"data": [], "pagination": {}}
 
 def download_attachment(file_url, filename):
-    """Download attachment from API."""
+    """Download attachment from API with timeout."""
     try:
-        response = requests.get(file_url, headers=HEADERS)
+        response = requests.get(file_url, headers=HEADERS, timeout=30)
         response.raise_for_status()
 
         file_path = FILES_DIR / filename
@@ -65,19 +65,23 @@ def download_attachment(file_url, filename):
         return None
 
 def collect_all_posts():
-    """Collect all instructor posts with full details and attachments."""
+    """Collect all instructor posts with full details and attachments.
+
+    Handles pagination to retrieve all posts, downloads all attachments,
+    and saves complete post data including full body (not truncated).
+    """
     print(f"\n📥 Collecting posts from instructor (ID: {INSTRUCTOR_ID})...")
 
     all_posts = []
     page = 1
     has_more = True
-
-    while has_more:
+    total_attempted = 0
         print(f"  Fetching page {page}...")
         response = requests.get(
             f"{API_URL}/api/v1/datasets/posts",
             headers=HEADERS,
-            params={"author_id": INSTRUCTOR_ID, "page": page, "limit": 100}
+            params={"author_id": INSTRUCTOR_ID, "page": page, "limit": 100},
+            timeout=10
         )
 
         if response.status_code != 200:
@@ -94,12 +98,19 @@ def collect_all_posts():
         # Process each post
         for post in posts:
             post_id = post.get("id")
+            total_attempted += 1
+
+            # Validate post_id before fetching
+            if not post_id:
+                print(f"  ⚠️  Skipping post without ID")
+                continue
 
             # Fetch full post details to get complete body and attachments
             try:
                 full_response = requests.get(
                     f"{API_URL}/api/v1/datasets/posts/{post_id}",
-                    headers=HEADERS
+                    headers=HEADERS,
+                    timeout=10  # Add timeout to prevent hanging
                 )
                 full_response.raise_for_status()
                 full_post = full_response.json()
@@ -155,8 +166,10 @@ def collect_all_posts():
             "posts": all_posts
         }, f, indent=2)
 
-    print(f"\n✅ Collected {len(all_posts)} posts")
+    print(f"\n✅ Collected {len(all_posts)} posts (attempted {total_attempted})")
     print(f"   Saved to: {COLLECTED_JSON}")
+    if all_posts:
+        print(f"   Files downloaded: {sum(len(p.get('files', [])) for p in all_posts)}")
 
     return all_posts
 
@@ -173,7 +186,8 @@ def has_user_reply(post_id):
     try:
         response = requests.get(
             f"{API_URL}/api/v1/datasets/posts/{post_id}/comments",
-            headers=HEADERS
+            headers=HEADERS,
+            timeout=10
         )
         response.raise_for_status()
         comments = response.json().get("data", [])
@@ -210,7 +224,8 @@ def reply_to_checkin(post_id, title):
         response = requests.post(
             f"{API_URL}/api/v1/datasets/posts/{post_id}/comments",
             headers=HEADERS,
-            json={"body": reply_text}
+            json={"body": reply_text},
+            timeout=10
         )
 
         if response.status_code == 423:
