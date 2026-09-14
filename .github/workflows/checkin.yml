@@ -1,0 +1,55 @@
+name: Scheduled Check-In Bot
+
+on:
+  schedule:
+    # Run daily at 10:00 AM UTC (covers typical check-in windows)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  checkin-bot:
+    runs-on: ubuntu-latest
+
+    env:
+      PRACTICE_API_TOKEN: ${{ secrets.PRACTICE_API_TOKEN }}
+      PRACTICE_API_URL: ${{ secrets.PRACTICE_API_URL }}
+      INSTRUCTOR_ID: ${{ vars.INSTRUCTOR_ID }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run check-in bot
+        run: python checkin_bot.py
+
+      - name: Commit and push artifacts
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+
+          # Check if there are any changes to commit
+          if [ -n "$(git status --porcelain)" ]; then
+            git add artifact/
+            git commit -m "Bot: Collect posts and process check-ins - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: checkin-bot-artifacts
+          path: artifact/
+          retention-days: 30
