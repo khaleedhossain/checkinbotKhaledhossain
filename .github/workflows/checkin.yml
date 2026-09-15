@@ -1,9 +1,12 @@
 name: Scheduled Check-In Bot
 
+permissions:
+  contents: write
+
 on:
   schedule:
-    # Run daily at 10:00 AM UTC (covers typical check-in windows)
-    - cron: '0 10 * * *'
+    # Run daily at 2:00 PM UTC (9:00 AM Central - safe from UTC delays)
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
