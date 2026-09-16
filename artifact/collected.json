@@ -1,6 +1,330 @@
 {
-  "collected_at": "2026-09-16T04:44:02.987028",
+  "collected_at": "2026-09-16T05:03:28.803161",
   "instructor_id": 7,
-  "total_posts": 0,
-  "posts": []
+  "total_posts": 31,
+  "posts": [
+    {
+      "id": 35,
+      "title": "Sept 16 check-in",
+      "body": "Daily check-in for Wednesday 16 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-16T05:00:36.482975",
+      "updated_at": "2026-09-16T05:00:36.482980",
+      "files": []
+    },
+    {
+      "id": 34,
+      "title": "Check-in for Sept 15",
+      "body": "Daily check-in for Tuesday 15 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:07.310656",
+      "updated_at": "2026-09-15T15:16:07.310659",
+      "files": []
+    },
+    {
+      "id": 33,
+      "title": "Sept 14 check-in",
+      "body": "Daily check-in for Monday 14 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:07.158613",
+      "updated_at": "2026-09-15T15:16:07.158616",
+      "files": []
+    },
+    {
+      "id": 32,
+      "title": "Check-in for Sept 13",
+      "body": "Daily check-in for Sunday 13 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:07.004517",
+      "updated_at": "2026-09-15T15:16:07.004520",
+      "files": []
+    },
+    {
+      "id": 31,
+      "title": "Sept 12 check-in",
+      "body": "Daily check-in for Saturday 12 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:06.849863",
+      "updated_at": "2026-09-15T15:16:06.849866",
+      "files": []
+    },
+    {
+      "id": 30,
+      "title": "Check-in for Sept 11",
+      "body": "Daily check-in for Friday 11 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:06.689547",
+      "updated_at": "2026-09-15T15:16:06.689549",
+      "files": []
+    },
+    {
+      "id": 29,
+      "title": "Sept 10 check-in",
+      "body": "Daily check-in for Thursday 10 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:06.533864",
+      "updated_at": "2026-09-15T15:16:06.533867",
+      "files": []
+    },
+    {
+      "id": 28,
+      "title": "Check-in for Sept 9",
+      "body": "Daily check-in for Wednesday 09 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:06.385108",
+      "updated_at": "2026-09-15T15:16:06.385111",
+      "files": []
+    },
+    {
+      "id": 27,
+      "title": "Sept 8 check-in",
+      "body": "Daily check-in for Tuesday 08 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:06.218179",
+      "updated_at": "2026-09-15T15:16:06.218183",
+      "files": []
+    },
+    {
+      "id": 26,
+      "title": "Check-in for Sept 7",
+      "body": "Daily check-in for Monday 07 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-15T15:16:06.045993",
+      "updated_at": "2026-09-15T15:16:06.046002",
+      "files": []
+    },
+    {
+      "id": 25,
+      "title": "Reminder: GitHub cron runs in UTC",
+      "body": "Central time is UTC-5 until 1 November.",
+      "tags": [
+        "tip"
+      ],
+      "created_at": "2026-09-15T14:58:17.627801",
+      "updated_at": "2026-09-15T14:58:17.627810",
+      "files": []
+    },
+    {
+      "id": 24,
+      "title": "Week 5 Pandas notes",
+      "body": "Two files for Week 5: a one-page Pandas quick reference, and a small CSV to practise groupby and mean on before you start Mini Project 3.",
+      "tags": [
+        "week5",
+        "pandas"
+      ],
+      "created_at": "2026-09-15T14:58:17.498189",
+      "updated_at": "2026-09-15T14:58:17.498196",
+      "files": []
+    },
+    {
+      "id": 23,
+      "title": "Course syllabus, Fall 2026",
+      "body": "The Fall 2026 syllabus is attached as a PDF.",
+      "tags": [
+        "syllabus"
+      ],
+      "created_at": "2026-09-15T14:58:17.406688",
+      "updated_at": "2026-09-15T14:58:17.406696",
+      "files": []
+    },
+    {
+      "id": 22,
+      "title": "Scheduled bot lab: what this feed is for",
+      "body": "This feed is where I post course material for the Scheduled Bot lab. Your bot's first job is to collect everything I publish here: every post, its full body, its tags and timestamps, and every attached file.\n\nSome posts are long, like this one, and some are a single line. Some carry one attachment, some carry several, and many carry none. A correct collector does not care which: it pages through all of my posts using the author filter, saves each body exactly as the API returns it, and downloads every file listed under attachments.\n\nYour bot's second job is to reply to my daily check-in posts while each one is open. Those are the only posts with the check-in keyword in the title. Do not reply to this post or any other regular post, and never reply to another student's post.\n\nI will add more posts over the coming days, so your artifact should grow as your schedule runs. Whatever is in your committed artifact folder at the deadline is what I grade.",
+      "tags": [
+        "lab",
+        "info"
+      ],
+      "created_at": "2026-09-15T14:58:17.356030",
+      "updated_at": "2026-09-15T14:58:17.356039",
+      "files": []
+    },
+    {
+      "id": 21,
+      "title": "Testing from VSCodium",
+      "body": "hello",
+      "tags": [
+        "test"
+      ],
+      "created_at": "2026-09-09T20:20:23.955796",
+      "updated_at": "2026-09-09T20:20:23.955802",
+      "files": []
+    },
+    {
+      "id": 20,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-09T19:31:04.040177",
+      "updated_at": "2026-09-09T19:31:04.040187",
+      "files": []
+    },
+    {
+      "id": 19,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-06T23:21:26.955389",
+      "updated_at": "2026-09-06T23:21:26.955399",
+      "files": []
+    },
+    {
+      "id": 18,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-06T17:14:19.328215",
+      "updated_at": "2026-09-06T17:14:19.328225",
+      "files": []
+    },
+    {
+      "id": 17,
+      "title": "Testing from VS Code",
+      "body": "hello",
+      "tags": [
+        "test"
+      ],
+      "created_at": "2026-09-06T04:26:06.343448",
+      "updated_at": "2026-09-06T04:26:06.343457",
+      "files": []
+    },
+    {
+      "id": 16,
+      "title": "Testing from VS Code",
+      "body": "hello",
+      "tags": [
+        "test"
+      ],
+      "created_at": "2026-09-06T04:01:18.741207",
+      "updated_at": "2026-09-06T04:01:18.741217",
+      "files": []
+    },
+    {
+      "id": 15,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-06T03:43:54.186096",
+      "updated_at": "2026-09-06T03:43:54.186105",
+      "files": []
+    },
+    {
+      "id": 14,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-05T22:55:59.736539",
+      "updated_at": "2026-09-05T22:55:59.736549",
+      "files": []
+    },
+    {
+      "id": 13,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-05T21:11:38.965440",
+      "updated_at": "2026-09-05T21:11:38.965449",
+      "files": []
+    },
+    {
+      "id": 12,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-05T00:09:46.664776",
+      "updated_at": "2026-09-05T00:09:46.664785",
+      "files": []
+    },
+    {
+      "id": 11,
+      "title": "Week 3 Lab",
+      "body": "Updating my first post.",
+      "tags": [],
+      "created_at": "2026-09-04T03:36:18.032216",
+      "updated_at": "2026-09-04T04:38:33.113291",
+      "files": []
+    },
+    {
+      "id": 8,
+      "title": "Week 3 lab",
+      "body": "This is Alex Crenshaw and I have successfully finished Mini Project 1 for INF 601",
+      "tags": [],
+      "created_at": "2026-09-03T21:23:20.053405",
+      "updated_at": "2026-09-03T21:23:20.053415",
+      "files": []
+    },
+    {
+      "id": 7,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-03T18:51:37.861174",
+      "updated_at": "2026-09-03T18:51:37.861182",
+      "files": []
+    },
+    {
+      "id": 6,
+      "title": "Week 3 Lab Post Regenerated",
+      "body": "This is a testing post",
+      "tags": [
+        "test"
+      ],
+      "created_at": "2026-09-03T16:51:58.183066",
+      "updated_at": "2026-09-03T16:51:58.183074",
+      "files": []
+    },
+    {
+      "id": 4,
+      "title": "Week 3 lab",
+      "body": "My first created post.",
+      "tags": [],
+      "created_at": "2026-09-02T23:43:01.541799",
+      "updated_at": "2026-09-02T23:43:01.541808",
+      "files": []
+    },
+    {
+      "id": 2,
+      "title": "Why we practice with a real API",
+      "body": "Calling this API is how you will build your MCP server later.",
+      "tags": [
+        "api",
+        "mcp"
+      ],
+      "created_at": "2026-07-06T21:48:08.101953",
+      "updated_at": "2026-07-06T21:48:08.101954",
+      "files": []
+    },
+    {
+      "id": 1,
+      "title": "Welcome to the Practice Hub",
+      "body": "Use the REST API with your token to add your own posts.",
+      "tags": [
+        "meta",
+        "welcome"
+      ],
+      "created_at": "2026-07-06T21:48:08.101951",
+      "updated_at": "2026-07-06T21:48:08.101953",
+      "files": []
+    }
+  ]
 }
