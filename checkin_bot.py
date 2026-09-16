@@ -77,7 +77,7 @@ def collect_all_posts():
     has_more = True
     total_attempted = 0
 
-    While has_more:
+    while has_more:
         print(f"  Fetching page {page}...")
         response = requests.get(
             f"{API_URL}/api/v1/datasets/posts",
