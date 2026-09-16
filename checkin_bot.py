@@ -38,7 +38,7 @@ def fetch_posts(user_id, page=1):
         "limit": 100
     }
 
-    url = f"{API_URL}/api/v1/datasets/posts"
+    url = f"{API_URL}/api/v1/posts"
 
     try:
         response = requests.get(url, headers=HEADERS, params=params)
@@ -80,7 +80,7 @@ def collect_all_posts():
     while has_more:
         print(f"  Fetching page {page}...")
         response = requests.get(
-            f"{API_URL}/api/v1/datasets/posts",
+            f"{API_URL}/api/v1/posts",
             headers=HEADERS,
             params={"author_id": INSTRUCTOR_ID, "page": page, "limit": 100},
             timeout=10
@@ -110,7 +110,7 @@ def collect_all_posts():
             # Fetch full post details to get complete body and attachments
             try:
                 full_response = requests.get(
-                    f"{API_URL}/api/v1/datasets/posts/{post_id}",
+                    f"{API_URL}/api/v1/posts/{post_id}",
                     headers=HEADERS,
                     timeout=10  # Add timeout to prevent hanging
                 )
@@ -187,7 +187,7 @@ def has_user_reply(post_id):
     """
     try:
         response = requests.get(
-            f"{API_URL}/api/v1/datasets/posts/{post_id}/comments",
+            f"{API_URL}/api/v1/posts/{post_id}/comments",
             headers=HEADERS,
             timeout=10
         )
@@ -224,7 +224,7 @@ def reply_to_checkin(post_id, title):
 
     try:
         response = requests.post(
-            f"{API_URL}/api/v1/datasets/posts/{post_id}/comments",
+            f"{API_URL}/api/v1/posts/{post_id}/comments",
             headers=HEADERS,
             json={"body": reply_text},
             timeout=10
