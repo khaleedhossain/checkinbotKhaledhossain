@@ -1,8 +1,19 @@
 {
-  "collected_at": "2026-09-17T15:11:23.694552",
+  "collected_at": "2026-09-18T15:10:32.188745",
   "instructor_id": 7,
-  "total_posts": 32,
+  "total_posts": 33,
   "posts": [
+    {
+      "id": 37,
+      "title": "Sept 18 check-in",
+      "body": "Daily check-in for Friday 18 September. Reply to this post to check in.",
+      "tags": [
+        "check-in"
+      ],
+      "created_at": "2026-09-18T05:00:36.486819",
+      "updated_at": "2026-09-18T05:00:36.486824",
+      "files": []
+    },
     {
       "id": 36,
       "title": "Check-in for Sept 17",
