@@ -1,8 +1,84 @@
 {
-  "collected_at": "2026-11-11T21:44:42.955105",
+  "collected_at": "2026-11-12T21:43:57.821651",
   "instructor_id": 7,
-  "total_posts": 43,
+  "total_posts": 51,
   "posts": [
+    {
+      "id": 57,
+      "title": "MP7 test post 2 (edited)",
+      "body": "Post Number 2",
+      "tags": [
+        "MP7",
+        "ClaudeCode",
+        "MCP"
+      ],
+      "created_at": "2026-11-12T04:29:38.808901",
+      "updated_at": "2026-11-12T04:31:42.922769",
+      "files": []
+    },
+    {
+      "id": 56,
+      "title": "MP7 test post",
+      "body": "Created by my MCP server - test post",
+      "tags": [],
+      "created_at": "2026-11-12T04:21:52.825837",
+      "updated_at": "2026-11-12T04:21:52.825840",
+      "files": []
+    },
+    {
+      "id": 55,
+      "title": "Test Post",
+      "body": "test",
+      "tags": [],
+      "created_at": "2026-11-12T02:50:44.116132",
+      "updated_at": "2026-11-12T02:50:44.116142",
+      "files": []
+    },
+    {
+      "id": 54,
+      "title": "Test Post",
+      "body": "test",
+      "tags": [],
+      "created_at": "2026-11-12T02:50:33.700324",
+      "updated_at": "2026-11-12T02:50:33.700347",
+      "files": []
+    },
+    {
+      "id": 53,
+      "title": "Test Post",
+      "body": "test",
+      "tags": [],
+      "created_at": "2026-11-12T02:50:23.372749",
+      "updated_at": "2026-11-12T02:50:23.372759",
+      "files": []
+    },
+    {
+      "id": 52,
+      "title": "Test Post",
+      "body": "test",
+      "tags": [],
+      "created_at": "2026-11-12T02:42:59.754405",
+      "updated_at": "2026-11-12T02:42:59.754416",
+      "files": []
+    },
+    {
+      "id": 51,
+      "title": "Test Post",
+      "body": "test",
+      "tags": [],
+      "created_at": "2026-11-12T02:23:38.184466",
+      "updated_at": "2026-11-12T02:23:38.184476",
+      "files": []
+    },
+    {
+      "id": 50,
+      "title": "Test Post",
+      "body": "test",
+      "tags": [],
+      "created_at": "2026-11-12T02:22:22.733090",
+      "updated_at": "2026-11-12T02:22:22.733098",
+      "files": []
+    },
     {
       "id": 49,
       "title": "MP7 acceptance test",
