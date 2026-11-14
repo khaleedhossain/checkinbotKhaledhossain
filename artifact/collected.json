@@ -1,8 +1,46 @@
 {
-  "collected_at": "2026-11-13T21:11:39.293883",
+  "collected_at": "2026-11-14T19:42:56.272968",
   "instructor_id": 7,
-  "total_posts": 51,
+  "total_posts": 54,
   "posts": [
+    {
+      "id": 61,
+      "title": "MCP Server Test (edited)",
+      "body": "Created by Claude Code through my Mini Project 7 MCP server.",
+      "tags": [
+        "mcp",
+        "python",
+        "inf601"
+      ],
+      "created_at": "2026-11-14T19:06:16.956564",
+      "updated_at": "2026-11-14T19:11:27.427992",
+      "files": []
+    },
+    {
+      "id": 60,
+      "title": "MP7 acceptance test \u2013 edited",
+      "body": "Created by Claude Code through my FastMCP server.",
+      "tags": [
+        "inf601",
+        "mcp"
+      ],
+      "created_at": "2026-11-14T15:37:55.719923",
+      "updated_at": "2026-11-14T15:37:58.040500",
+      "files": []
+    },
+    {
+      "id": 59,
+      "title": "MP7 acceptance test (edited)",
+      "body": "Created by Claude Code through my MCP server",
+      "tags": [
+        "MP7",
+        "ClaudeCode",
+        "MCP"
+      ],
+      "created_at": "2026-11-14T02:42:42.129045",
+      "updated_at": "2026-11-14T02:43:33.590137",
+      "files": []
+    },
     {
       "id": 58,
       "title": "Hello from Claude (now with CRUD)",
